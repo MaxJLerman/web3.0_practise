@@ -15,11 +15,14 @@ const Navbar = () => {
 
   return (
     <nav className="w-full flex md:justify-center justify-between items-center p-4">
-      <div className="flex justify-center items-center flex-row">
+      <div className="md:flex-[0.5] flex justify-center items-center flex-row">
         <img src={logo} alt="logo" className="w-32 cursor-pointer" />
         <span className="text-white">Galactic Credit Standard Exchange</span>
       </div>
       <ul className="text-white md:flex hiddent list-none flex-row justify-between items-center flex-initial">
+        {array.map((item, index) => (
+              <NavbarItem key={item + index} title={item} classProps="my-2 text-lg" />
+            ))}
         <li className="bg-[#2952e3] py-2 px-7 mx-4 rounded-full cursor-pointer hover:bg-[#2546bd]">
           Login
         </li>
