@@ -1,14 +1,16 @@
 import React from "react";
-// import { HiMenuAlt4 } from "react-icons/hi";
-// import { AiOutlineClose } from "react-icons/ai";
+import { useState } from "react";
 
 import logo from "../../images/logo.png";
+import {Menu, MenuOpen} from '@mui/icons-material';
 
 const NavbarItem = ({ title, classProps }) => (
   <li className={`mx-4 cursor ${classProps}`}>{title}</li>
 );
 
 const Navbar = () => {
+  const [toggleMenu, setToggleMenu] = useState(false);
+  
   const array = ["Market", "Exchange", "Tutorials", "Wallets"];
   return (
     <nav className="w-full flex md:justify-center justify-between items-center p-4">
@@ -23,6 +25,13 @@ const Navbar = () => {
           Login
         </li>
       </ul>
+      <div className="flex relative">
+        {
+          toggleMenu
+          ? <MenuOpen style={{ fontSize: 50, color: "white" }} onClick={() => setToggleMenu(false)} />
+          : <Menu style={{ fontSize: 50, color: "white" }} onClick={() => setToggleMenu(true)} />
+        }
+      </div>
     </nav>
   );
 };
