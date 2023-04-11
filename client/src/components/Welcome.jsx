@@ -1,6 +1,8 @@
 import React from "react";
 
 import { Loader } from "./";
+import currency from "../../images/currency.png";
+import {InfoOutlined} from "@mui/icons-material/";
 
 const Welcome = () => {
   const connectWallet = () => {
@@ -14,7 +16,7 @@ const Welcome = () => {
       <div className="flex md:flex-row flex:col items-start justify-between md:p-20 py-12 px-4">
         <div className="flex flex-1 justify-start flex-col md:mr-10">
           <h1 className="text-3xl sm:text-5xl text-white py-1">
-            Send Crypto <br /> across the world
+            Send Credits <br /> across the world
           </h1>
           <p className="text-left mt-5 text-white font-light md:w-9/12 w-11/12 text-base">
             Explore the crypto world. Buy and sell cryptocurrencies easily on *this webshite*
@@ -43,8 +45,17 @@ const Welcome = () => {
             </div>
           </div>
         </div>
-        <div>
-          
+        <div className="flex flex-col flex-1 items-center justify-start w-full md:mt-0 mt-10">
+          <div className="p-3 justify-end items-start flex-col rounded-xl h-40 sm:w-72 w-full my-5 eth-card white-glassmorphism">
+            <div className="flex justify-between flex-col w-full h-full">
+              <div className="flex justify-between items-start">
+                <div className="w-10 h-10 rounded-full border-2 border-white flex justify-center items-center">
+                  <img src={currency} alt="logo" className="w-32 cursor-pointer" style={{ width: 18, height: 30 }} />
+                </div>
+                <InfoOutlined style={{ fontSize: 18 }} className="text-white md:hidden cursor-pointer" />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
